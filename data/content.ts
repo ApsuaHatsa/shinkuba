@@ -1,7 +1,7 @@
 export const content = {
   header: {
     nav: [
-      { label: "Ахалагаратə", href: "#hero" },
+      { label: "Ахалагаратә", href: "#hero" },
       { label: "Абиографиа", href: "#biography" },
       { label: "Амузеи", href: "#museum" },
       { label: "Агалереиа", href: "#gallery" },
@@ -393,7 +393,7 @@ export const content = {
     domain: "shinkuba.apsny.dev",
     navTitle: "Абжьагарақәа",
     nav: [
-      { label: "Ахалагаратə", href: "#hero" },
+      { label: "Ахалагаратә", href: "#hero" },
       { label: "Абиографиа", href: "#biography" },
       { label: "Амузеи", href: "#museum" },
       { label: "Агалереиа (24 фото)", href: "#gallery" },
