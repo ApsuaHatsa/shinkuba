@@ -139,8 +139,8 @@ export const MuseumSection: React.FC = () => {
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white">Аекскурсиақәеи аҭаареи</div>
-                  <div className="text-xs text-slate-400">Ҷлоу ақыҭа ахь амҩадыргылара</div>
+                  <div className="text-sm font-bold text-white">Амузеи аҭыӡҭыԥ</div>
+                  <div className="text-xs text-slate-400">Ҷлоу ақыҭа, Очамчыра араион</div>
                 </div>
               </div>
 

@@ -34,7 +34,7 @@ export const ContactSection: React.FC = () => {
             Аконтактқәа
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Аҩны-музеи аҭаареи, аекскурсиақәа раԥҵареи, аимадареи рзы ҳара сынтә хабар ҳаҳәа.
+            Баграт Шьынқәба имемориалтә аҩны-музеи аимадареи аҳаҭырқәҵареи рзы ҳара сынтә хабар ҳаҳәа.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export const ContactSection: React.FC = () => {
                   +7 940 992-47-44
                 </a>
                 <p className="text-xs text-slate-400">
-                  Аҭаареи аекскурсиақәа раԥҵареи рзы
+                  Аофициалтә аимадаразы
                 </p>
               </div>
             </div>
@@ -128,11 +128,11 @@ export const ContactSection: React.FC = () => {
 
           </div>
 
-          {/* Right: Excursion & Message Form */}
+          {/* Right: Message Form */}
           <div className="lg:col-span-6">
             <div className="p-8 sm:p-10 rounded-3xl bg-[#060D1A] border border-slate-800 shadow-2xl relative">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">
-                Аҭаареи аекскурсиеи раԥҵара
+                Аҳабар анашьҭра
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 mb-6">
                 Аформа анаҭәышь, ҳара уахынла ҳауаԥшып.
@@ -180,13 +180,13 @@ export const ContactSection: React.FC = () => {
 
                   <div>
                     <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">
-                      Аҳабар / Аекскурсиа
+                      Аҳабар
                     </label>
                     <textarea
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Аекскурсиа амш, ауаа рхыԥхьаӡара..."
+                      placeholder="Уҳабар абра иҭажәгал..."
                       className="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-[#00E5C0] text-sm transition-colors resize-none"
                     />
                   </div>
