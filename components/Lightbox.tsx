@@ -63,9 +63,15 @@ export const Lightbox: React.FC<LightboxProps> = ({
   const currentImage = images[currentIndex];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
+      onClick={onClose}
+    >
       {/* Top Bar */}
-      <div className="absolute top-0 inset-x-0 flex items-center justify-between p-4 md:p-6 z-10 bg-gradient-to-b from-black/80 to-transparent">
+      <div 
+        className="absolute top-0 inset-x-0 flex items-center justify-between p-4 md:p-6 z-10 bg-gradient-to-b from-black/80 to-transparent cursor-default"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="flex items-center gap-3">
           <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#00E5C0]/20 text-[#00E5C0] border border-[#00E5C0]/30">
             {currentImage.category}
@@ -77,7 +83,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
         <button
           onClick={onClose}
-          className="p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white transition-colors border border-slate-700/50"
+          className="p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white transition-colors border border-slate-700/50 cursor-pointer"
           aria-label="Ааркра"
         >
           <X className="w-5 h-5" />
@@ -98,7 +104,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
         </div>
 
         {/* Caption */}
-        <div className="mt-3 text-center max-w-2xl px-4">
+        <div 
+          className="mt-3 text-center max-w-2xl px-4 cursor-default"
+          onClick={(e) => e.stopPropagation()}
+        >
           <h3 className="text-base md:text-lg font-semibold text-white">
             {currentImage.title}
           </h3>
@@ -112,16 +121,22 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
       {/* Nav Buttons */}
       <button
-        onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-lg"
+        onClick={(e) => {
+          e.stopPropagation();
+          handlePrev();
+        }}
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-lg cursor-pointer"
         aria-label="Аԥхьаҟа"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
 
       <button
-        onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-lg"
+        onClick={(e) => {
+          e.stopPropagation();
+          handleNext();
+        }}
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-lg cursor-pointer"
         aria-label="Аҵыхәтәантәи"
       >
         <ChevronRight className="w-6 h-6" />
