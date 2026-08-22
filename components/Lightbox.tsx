@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
@@ -26,6 +27,11 @@ export const Lightbox: React.FC<LightboxProps> = ({
   onNavigate,
 }) => {
   const isOpen = currentIndex !== null;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handlePrev = useCallback(() => {
     if (currentIndex === null) return;
@@ -58,11 +64,11 @@ export const Lightbox: React.FC<LightboxProps> = ({
     };
   }, [isOpen, onClose, handlePrev, handleNext]);
 
-  if (!isOpen || currentIndex === null) return null;
+  if (!isOpen || currentIndex === null || !mounted) return null;
 
   const currentImage = images[currentIndex];
 
-  return (
+  return createPortal(
     <div 
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
       onClick={onClose}
@@ -141,6 +147,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
       >
         <ChevronRight className="w-6 h-6" />
       </button>
-    </div>
+    </div>,
+    document.body
   );
 };
