@@ -5,7 +5,7 @@ import { Newspaper, ArrowRight, ExternalLink, CalendarDays, MapPin } from "lucid
 import { content } from "../data/content";
 
 export const NewsSection: React.FC = () => {
-  const newsItems = content.news.items;
+  const newsItems = content.news.newsItems;
 
   return (
     <section id="news" className="py-24 relative bg-[#060D1A]">
@@ -27,7 +27,7 @@ export const NewsSection: React.FC = () => {
 
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {newsItems.map((news) => (
+          {newsItems.map((news: any) => (
             <div
               key={news.id}
               className="p-7 rounded-3xl bg-[#0B1528]/80 border border-slate-800 hover:border-[#00E5C0]/40 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1"
