@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Camera, ZoomIn, Layers, Sparkles } from "lucide-react";
+import { Camera, ZoomIn, Layers } from "lucide-react";
 import { Lightbox, GalleryImage } from "./Lightbox";
 
 export const GallerySection: React.FC = () => {

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Landmark, MapPin, Clock, Phone, Mail, Compass, Sparkles, Navigation } from "lucide-react";
+import { Landmark, MapPin, Clock, Phone, Mail, Compass, Navigation } from "lucide-react";
 
 export const MuseumSection: React.FC = () => {
   return (
@@ -81,7 +81,7 @@ export const MuseumSection: React.FC = () => {
           <div className="lg:col-span-6 flex flex-col gap-6">
             <div className="p-6 sm:p-8 rounded-3xl bg-[#060D1A]/90 border border-slate-800 backdrop-blur-xl">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-[#00E5C0]" />
+                <Compass className="w-5 h-5 text-[#00E5C0]" />
                 <span>Амузеи иазкны</span>
               </h3>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">

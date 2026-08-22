@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Newspaper, Calendar, ArrowUpRight, Sparkles, MapPin } from "lucide-react";
+import { Newspaper, Calendar, ArrowUpRight, MapPin } from "lucide-react";
 
 export const NewsSection: React.FC = () => {
   const newsItems = [

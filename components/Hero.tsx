@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Landmark, BookOpen, Camera, Sparkles, MapPin, Calendar } from "lucide-react";
+import { ArrowRight, Landmark, BookOpen, Camera, Award, MapPin, Calendar } from "lucide-react";
 
 export const Hero: React.FC = () => {
   return (
@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             
             {/* Top Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-[#00E5C0]/30 shadow-glow-teal mb-6">
-              <Sparkles className="w-3.5 h-3.5 text-[#00E5C0]" />
+              <Award className="w-3.5 h-3.5 text-[#00E5C0]" />
               <span className="text-xs font-semibold text-slate-200 tracking-wide">
                 Аԥсны жәлар рпоет, ашәҟәыҩҩы, дакадемикуп
               </span>
@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
             {/* Main Title */}
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
               Баграт Уасыл-иԥа <br />
-              <span className="bg-gradient-to-r from-[#00E5C0] via-[#5EEAD4] to-[#6366F1] bg-clip-text text-transparent">
+              <span className="text-[#00E5C0] drop-shadow-md">
                 Шьынқәба
               </span>
             </h1>

@@ -37,10 +37,8 @@ export const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link href="#hero" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00E5C0] to-[#6366F1] flex items-center justify-center p-[1.5px] shadow-glow-teal group-hover:scale-105 transition-transform">
-            <div className="w-full h-full bg-[#060D1A] rounded-[10px] flex items-center justify-center">
-              <Landmark className="w-5 h-5 text-[#00E5C0]" />
-            </div>
+          <div className="w-10 h-10 rounded-xl bg-[#00E5C0]/10 border border-[#00E5C0]/30 flex items-center justify-center shadow-glow-teal group-hover:scale-105 transition-transform">
+            <Landmark className="w-5 h-5 text-[#00E5C0]" />
           </div>
           <div>
             <div className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-[#00E5C0] transition-colors leading-tight">

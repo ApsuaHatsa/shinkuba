@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { BookOpen, Star, Quote, Award, Sparkles, Feather } from "lucide-react";
+import { BookOpen, Star, Quote, Award, Feather } from "lucide-react";
 
 export const WorksSection: React.FC = () => {
   const books = [
@@ -81,7 +81,7 @@ export const WorksSection: React.FC = () => {
 
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-2 text-xs font-bold text-[#00E5C0] uppercase tracking-wider mb-3">
-              <Sparkles className="w-4 h-4" />
+              <Quote className="w-4 h-4" />
               <span>Баграт Шьынқәба иажәақәа рҟынтә</span>
             </div>
             <blockquote className="text-lg sm:text-2xl font-serif italic text-slate-100 leading-relaxed mb-4">
