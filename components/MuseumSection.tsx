@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Landmark, MapPin, Clock, Phone, Mail, Compass, Navigation } from "lucide-react";
+import { content } from "../data/content";
 
 export const MuseumSection: React.FC = () => {
   return (
@@ -13,13 +14,13 @@ export const MuseumSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#00E5C0]/30 text-xs font-semibold text-[#00E5C0] mb-4">
             <Landmark className="w-3.5 h-3.5" />
-            <span>Амемориалтә аҩны-музеи</span>
+            <span>{content.museum.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Баграт Шьынқәба имемориалтә аҩны-музеи
+            {content.museum.title}
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Ҷлоу ақыҭа аҿы иҟоу амемориалтә музей: аклассик иԥсҭазаара, ирукописқәа, иҭаацәара рҭоурых, аԥсуа жәлар ркультуратә ҭынха.
+            {content.museum.desc}
           </p>
         </div>
 
@@ -31,48 +32,48 @@ export const MuseumSection: React.FC = () => {
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-slate-700/80 group">
               <Image
                 src="/images/image_03.jpg"
-                alt="Амемориалтә аҩны-музеи"
+                alt={content.museum.photos[0].alt}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                <span className="text-xs font-semibold text-white">Аҩны-музеи ахыбра</span>
+                <span className="text-xs font-semibold text-white">{content.museum.photos[0].caption}</span>
               </div>
             </div>
 
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-slate-700/80 group mt-6">
               <Image
                 src="/images/image_05.jpg"
-                alt="Аекспонатқәа"
+                alt={content.museum.photos[1].alt}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                <span className="text-xs font-semibold text-white">Аекспозициа азал</span>
+                <span className="text-xs font-semibold text-white">{content.museum.photos[1].caption}</span>
               </div>
             </div>
 
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-slate-700/80 group -mt-6">
               <Image
                 src="/images/image_07.jpg"
-                alt="Амемориалтә аҭыԥ"
+                alt={content.museum.photos[2].alt}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                <span className="text-xs font-semibold text-white">Аҭоурыхтә архив</span>
+                <span className="text-xs font-semibold text-white">{content.museum.photos[2].caption}</span>
               </div>
             </div>
 
             <div className="relative aspect-square rounded-2xl overflow-hidden border border-slate-700/80 group">
               <Image
                 src="/images/image_10.jpg"
-                alt="Ашәҟәқәа"
+                alt={content.museum.photos[3].alt}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                <span className="text-xs font-semibold text-white">Алитературатә ҭынха</span>
+                <span className="text-xs font-semibold text-white">{content.museum.photos[3].caption}</span>
               </div>
             </div>
           </div>
@@ -82,13 +83,13 @@ export const MuseumSection: React.FC = () => {
             <div className="p-6 sm:p-8 rounded-3xl bg-[#060D1A]/90 border border-slate-800 backdrop-blur-xl">
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
                 <Compass className="w-5 h-5 text-[#00E5C0]" />
-                <span>Амузеи иазкны</span>
+                <span>{content.museum.infoTitle}</span>
               </h3>
               <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
-                Баграт Уасыл-иԥа Шьынқәба имемориалтә аҩны-музеи иаартуп ашәҟәыҩҩы идиит ҳәа ирдыруа Ҷлоу ақыҭаҿы (Лаганиахәы аҳабла).
+                {content.museum.infoP1}
               </p>
               <p className="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
-                Абраҟа еиқәырхоуп ашәҟәыҩҩы ихаҭалатә мал, ирукописқәа, ифотоархив, ибиблиотека, иара убас Аԥсны аҳәынҭқарра анапхгара азиуаз аамҭа иатәу адокументқәа.
+                {content.museum.infoP2}
               </p>
 
               {/* Info Badges */}
@@ -96,25 +97,25 @@ export const MuseumSection: React.FC = () => {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                   <Clock className="w-4 h-4 text-[#00E5C0] flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-white">Аусуратә аамҭа:</div>
-                    <div className="text-slate-400">10:00 - 17:00</div>
+                    <div className="font-semibold text-white">{content.museum.hoursLabel}</div>
+                    <div className="text-slate-400">{content.museum.hoursValue}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                   <MapPin className="w-4 h-4 text-[#F59E0B] flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-white">Аҭыӡҭыԥ:</div>
-                    <div className="text-slate-400">Ҷлоу, Очамчыра араион</div>
+                    <div className="font-semibold text-white">{content.museum.addressLabel}</div>
+                    <div className="text-slate-400">{content.museum.addressValue}</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                   <Phone className="w-4 h-4 text-[#6366F1] flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-white">Ателефон:</div>
+                    <div className="font-semibold text-white">{content.museum.phoneLabel}</div>
                     <a href="tel:+79409924744" className="text-[#00E5C0] hover:underline">
-                      +7 940 992-47-44
+                      {content.museum.phoneValue}
                     </a>
                   </div>
                 </div>
@@ -122,9 +123,9 @@ export const MuseumSection: React.FC = () => {
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-900/80 border border-slate-800">
                   <Mail className="w-4 h-4 text-[#00E5C0] flex-shrink-0" />
                   <div>
-                    <div className="font-semibold text-white">Аелектронтә почта:</div>
+                    <div className="font-semibold text-white">{content.museum.emailLabel}</div>
                     <a href="mailto:bshinkuba@yandex.ru" className="text-slate-300 hover:text-white truncate">
-                      bshinkuba@yandex.ru
+                      {content.museum.emailValue}
                     </a>
                   </div>
                 </div>
@@ -139,8 +140,8 @@ export const MuseumSection: React.FC = () => {
                   <Compass className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-white">Амузеи аҭыӡҭыԥ</div>
-                  <div className="text-xs text-slate-400">Ҷлоу ақыҭа, Очамчыра араион</div>
+                  <div className="text-sm font-bold text-white">{content.museum.mapTitle}</div>
+                  <div className="text-xs text-slate-400">{content.museum.mapDesc}</div>
                 </div>
               </div>
 
@@ -151,7 +152,7 @@ export const MuseumSection: React.FC = () => {
                 className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-[#00E5C0] text-[#060D1A] hover:bg-[#5EEAD4] transition-colors flex-shrink-0 shadow-glow-teal"
               >
                 <Navigation className="w-3.5 h-3.5" />
-                <span>Акартаҿ</span>
+                <span>{content.museum.mapBtn}</span>
               </a>
             </div>
 

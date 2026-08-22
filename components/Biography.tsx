@@ -3,66 +3,16 @@
 import React from "react";
 import Image from "next/image";
 import { BookOpen, Award, GraduationCap, Building2, ScrollText, CheckCircle2 } from "lucide-react";
+import { content } from "../data/content";
 
 export const Biography: React.FC = () => {
-  const milestones = [
-    {
-      year: "1916",
-      title: "Адиит Ҷлоу ақыҭа",
-      desc: "12 лаҵара рзы Ҷлоу ақыҭа (Лаганиахәы аҳабла) Очамчыра араион аҿы диит.",
-      icon: ScrollText,
-      accent: "teal",
-    },
-    {
-      year: "1926 - 1930",
-      title: "Алагарҭатә школқәа",
-      desc: "1926 шықәсазы дҭалоит Ҷлоутәи алагарҭатә школ, далгоит 1928 шықәсазы. 1930 дласуеит Џьгьардатәи быжь-шықәсатәи ашкол ахь.",
-      icon: GraduationCap,
-      accent: "indigo",
-    },
-    {
-      year: "1935",
-      title: "Аҟәатәи арҵаҩратә техникум",
-      desc: "Далгоит Аҟәатәи арҵаҩратә техникум. Акьыԥхь аҿы дцәырҵуеит 1935 ш. инаркны. Даанахуоит Аҟәатәи аҳәынҭқарратә арҵаҩратә институт абызшәеи литературеи рыҟәша.",
-      icon: BookOpen,
-      accent: "gold",
-    },
-    {
-      year: "1939 - 1944",
-      title: "Аспирантураи акандидатраи",
-      desc: "Қырҭтәылатәи аҭҵаарадыррақәа Ракадемиа аинститут аспирантура. 1941 ш. Аԥсныҟа дхынҳәеит, аус иуеит агазет 'Аԥсны Ҟапшь' аредакциаҿ, Аԥсуа институтаҿы, Ашәҟәыҩҩцәа Реидгылаҿы. 1944 ш. афилологиатә аҭҵаарадыррақәа дыркандидатуп.",
-      icon: GraduationCap,
-      accent: "teal",
-    },
-    {
-      year: "1953 - 1958",
-      title: "Ашәҟәыҩҩцәа Реидгыла анапхгара",
-      desc: "Б. Шьынқәба Аԥснытәи Ашьҟәыҩҩцәа Реидгыла напхгара азиуеит.",
-      icon: Building2,
-      accent: "indigo",
-    },
-    {
-      year: "1958 - 1979",
-      title: "Асовет Апрезидиум Дахантәаҩуп",
-      desc: "Аԥснытәи АССР Иреихаӡоу Асовет Апрезидиум дахантәаҩуп.",
-      icon: Award,
-      accent: "gold",
-    },
-    {
-      year: "1967",
-      title: "Аԥсны жәлар рпоет",
-      desc: "Баграт Шьынқәба Аԥсны жәлар рпоет ҳәа аҳаҭыр хьӡы иаҭәаршьоит.",
-      icon: Award,
-      accent: "teal",
-    },
-    {
-      year: "1989",
-      title: "СССР жәлар рдепутат, Дакадемикуп",
-      desc: "СССР жәлар рдепутат. Баграт Шьынқәба дакадемикуп; ихҵоуп Ҟабарда-Балҟартәылеи Адыгьеиаи жәлар рышәҟәыҩҩы ҳәа ахьӡ.",
-      icon: Award,
-      accent: "gold",
-    },
-  ];
+  const milestones = content.biography.milestones.map((ms, index) => {
+    // Map icons manually based on the original structure or just use strings if possible,
+    // but since we need Lucide icons, we can add a lookup or keep the original array mapping
+    // Since the original was exactly this array, I'll keep the icons mapping here for simplicity
+    const icons = [ScrollText, GraduationCap, BookOpen, GraduationCap, Building2, Award, Award, Award];
+    return { ...ms, icon: icons[index] };
+  });
 
   return (
     <section id="biography" className="py-24 relative bg-[#060D1A]">
@@ -75,13 +25,13 @@ export const Biography: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#00E5C0]/30 text-xs font-semibold text-[#00E5C0] mb-4">
             <BookOpen className="w-3.5 h-3.5" />
-            <span>Баграт Уасыл-иԥа Шьынқәба имемориалтә аҩны-музеи</span>
+            <span>{content.biography.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Баграт Шьынқәба : Абиографиа
+            {content.biography.title}
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Аԥсны жәлар рпоет, ашәҟәыҩҩы, аҳәынҭқарратә усзуҩы, академик Баграт Уасыл-иԥа Шьынқәба иԥсҭазаареи иусуреи рхыҵхырҭа.
+            {content.biography.desc}
           </p>
         </div>
 
@@ -103,8 +53,8 @@ export const Biography: React.FC = () => {
                   />
                 </div>
                 <div className="mt-3 text-center">
-                  <div className="text-sm font-bold text-white">Б. У. Шьынқәба</div>
-                  <div className="text-xs text-[#00E5C0]">1916 - 2004</div>
+                  <div className="text-sm font-bold text-white">{content.biography.portraitName}</div>
+                  <div className="text-xs text-[#00E5C0]">{content.biography.portraitYears}</div>
                 </div>
               </div>
 
@@ -112,19 +62,19 @@ export const Biography: React.FC = () => {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-700/60">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00E5C0]">
-                    Аофициалтә абиографиатә текст
+                    {content.biography.textBadge}
                   </span>
                 </div>
 
                 <div className="prose prose-invert max-w-none text-slate-200 text-base sm:text-lg leading-relaxed space-y-4">
                   <p className="font-light text-slate-100 first-letter:text-4xl first-letter:font-bold first-letter:text-[#00E5C0] first-letter:mr-2 first-letter:float-left">
-                    Баграт Уасыл-иԥа Шьынқәба диит 1916 шықәса 12 лаҵара рзы Ҷлоу ақыҭа (Лаганиахәы аҳабла) Очамчыра араион аҿы. 1926 шықәсазы дҭалоит Ҷлоутәи алагарҭатә школ, далгоит 1928 шықәсазы. 1930 дласуеит Џьгьардатәи быжь-шықәсатәи ашкол ахь. Абраҟа ҵарашықәск анынаигӡа, дцоит Аҟәаҟа, дҭалоит Аҟәатәи арҵаҩратә техникум. Далгоит 1935 шықәсазы. Иара убасҟан 1935 рзы, даанахуоит Аҟәатәи аҳәынҭқарратә арҵаҩратә институт абызшәеи литературеи рыҟәша.
+                    {content.biography.paragraphs[0]}
                   </p>
                   <p>
-                    Абраҟа иҵара анихыркуша, 1939 шықәсазы, Баграт Шьынқәба дҵоит Қарҭҟа, дрыдылкылоит Қырҭтәылатәи аҭҵаарадыррақәа Ракадемиа иатәу Абызшәаҭҵаара аинститут аспирантураҿ. 1941 шықәсазы, аибашьра ианалага, аамҭала Аԥсныҟа дхынҳәеит, зны аус иуеит рҵаҩыс, нас агазет &quot;Аԥсны Ҟапшь&quot; аредакциаҿ Аԥсуа институтаҿы, Ашәҟәыҩҩцәа Реидгылаҿы. 1943 шықәсазы ҩаԥхьа Қарҭҟа дхынҳәуеит, дызҭаз аспирантураҿ иҵара наигӡоит иагьхиркушоит 1944 шықәсазы. Афилологиатә аҭҵаарадыррақәа дыркандидатуп.
+                    {content.biography.paragraphs[1]}
                   </p>
                   <p>
-                    Акьыԥхь аҿы дцәырҵуеит 1935 ш. инаркны. 1953-1958 шықәсқәа рзы Б. Шьынқәба Аԥснытәи Ашьҟәыҩҩцәа Реидгыла напхгара азиуеит. 1958-1979 ш. рзы Аԥснытәи АССР Иреихаӡоу Асовет Апрезидиум дахантәаҩуп. 1967 Баграт Шьынқәба Аԥсны жәлар рпоет ҳәа аҳаҭыр хьӡы иаҭәаршьоит. 1959, 1978, 1984 шықәсқуа рзы СССР Иреиҳаӡоу Асовет ашҟа депутатс далырхуеит, 1989 шықәсазы - СССР жәлар рдепутат. Баграт Шьынқәба дакадемикуп; ихҵоуп Ҟабарда-Балҟартәылеи Адыгьеиаи жәлар рышәҟәыҩҩы ҳәа ахьӡ.
+                    {content.biography.paragraphs[2]}
                   </p>
                 </div>
               </div>
@@ -136,10 +86,10 @@ export const Biography: React.FC = () => {
         <div className="mt-16">
           <div className="text-center mb-10">
             <h3 className="text-2xl font-bold text-white tracking-tight">
-              Аԥсҭазаара ахҭыс хадақәа
+              {content.biography.milestonesTitle}
             </h3>
             <p className="text-slate-400 text-sm mt-1">
-              Баграт Шьынқәба иҭоурыхтә мҩа (1916 - 1989+)
+              {content.biography.milestonesDesc}
             </p>
           </div>
 

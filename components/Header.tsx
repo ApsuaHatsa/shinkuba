@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, BookOpen, Landmark, Camera, Newspaper, Mail } from "lucide-react";
+import { content } from "../data/content";
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,15 +17,7 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Ахалагаратə", href: "#hero" },
-    { label: "Абиографиа", href: "#biography" },
-    { label: "Амузеи", href: "#museum" },
-    { label: "Агалереиа", href: "#gallery" },
-    { label: "Алитература", href: "#works" },
-    { label: "Ажәабжьқәа", href: "#news" },
-    { label: "Аконтактқәа", href: "#contact" },
-  ];
+  const navLinks = content.header.nav;
 
   return (
     <header
@@ -42,10 +35,10 @@ export const Header: React.FC = () => {
           </div>
           <div>
             <div className="text-base sm:text-lg font-bold tracking-tight text-white group-hover:text-[#00E5C0] transition-colors leading-tight">
-              Баграт Шьынқәба
+              {content.header.brandTitle}
             </div>
             <div className="text-[11px] font-medium text-slate-400 uppercase tracking-wider">
-              Амемориалтә аҩны-музеи
+              {content.header.brandSubtitle}
             </div>
           </div>
         </Link>
@@ -79,7 +72,7 @@ export const Header: React.FC = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-xl bg-slate-800/80 border border-slate-700/60 text-slate-200 hover:text-white"
-            aria-label="Амениу"
+            aria-label={content.header.menuAria}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

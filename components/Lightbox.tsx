@@ -70,15 +70,15 @@ export const Lightbox: React.FC<LightboxProps> = ({
 
   return createPortal(
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
+      className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/95 backdrop-blur-xl animate-in fade-in duration-200 cursor-pointer"
       onClick={onClose}
     >
       {/* Top Bar */}
       <div 
-        className="absolute top-0 inset-x-0 flex items-center justify-between p-4 md:p-6 z-10 bg-gradient-to-b from-black/80 to-transparent cursor-default"
+        className="absolute top-0 inset-x-0 flex items-center justify-between p-4 md:p-6 z-[100000] bg-gradient-to-b from-black/80 to-transparent cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 mt-safe">
           <span className="text-xs font-semibold px-3 py-1 rounded-full bg-[#00E5C0]/20 text-[#00E5C0] border border-[#00E5C0]/30">
             {currentImage.category}
           </span>
@@ -88,11 +88,14 @@ export const Lightbox: React.FC<LightboxProps> = ({
         </div>
 
         <button
-          onClick={onClose}
-          className="p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white transition-colors border border-slate-700/50 cursor-pointer"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+          className="p-3 md:p-2.5 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-200 hover:text-white transition-colors border border-slate-700/50 cursor-pointer mt-safe shadow-lg"
           aria-label="Ааркра"
         >
-          <X className="w-5 h-5" />
+          <X className="w-6 h-6 md:w-5 md:h-5" />
         </button>
       </div>
 
@@ -131,10 +134,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
           e.stopPropagation();
           handlePrev();
         }}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-lg cursor-pointer"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-xl cursor-pointer z-[100000]"
         aria-label="Аԥхьаҟа"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
       </button>
 
       <button
@@ -142,10 +145,10 @@ export const Lightbox: React.FC<LightboxProps> = ({
           e.stopPropagation();
           handleNext();
         }}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-lg cursor-pointer"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-3 md:p-4 rounded-full bg-slate-900/80 hover:bg-[#00E5C0] text-white hover:text-slate-950 transition-all border border-slate-700/50 hover:border-[#00E5C0] shadow-xl cursor-pointer z-[100000]"
         aria-label="Аҵыхәтәантәи"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
       </button>
     </div>,
     document.body

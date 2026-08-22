@@ -2,58 +2,13 @@
 
 import React from "react";
 import { BookOpen, Star, Quote, Award, Feather } from "lucide-react";
+import { content } from "../data/content";
 
 export const WorksSection: React.FC = () => {
-  const books = [
-    {
-      title: "Ацынҵәарах",
-      type: "Аҭоурыхтә роман",
-      year: "1974",
-      desc: "Убыхаа рҭоурыхтә трагедиа зну, адуней ахь зыхьӡ нназ ароман шедевр. Адуней бызшәақәа рацәала еиҭагоуп.",
-      badge: "Адунейтә шедевр",
-      highlight: true,
-    },
-    {
-      title: "Шьхақәа ирыԥхьаӡоит",
-      type: "Апоема",
-      year: "1954",
-      desc: "Аԥсны ашьхақәеи аԥсуа жәлар рыфырхаҵареи ирызку апоема-епос.",
-      badge: "Апоезиа",
-      highlight: false,
-    },
-    {
-      title: "Ашыцқәа реибашьра",
-      type: "Апоема",
-      year: "1950",
-      desc: "Афырхаҵареи ахаҭареи ирызку, акьыԥхь аҿы зыхьӡ ҵәцаз апоема.",
-      badge: "Аклассика",
-      highlight: false,
-    },
-    {
-      title: "Иалкаау иоымҭақәа",
-      type: "Ашәҟәы",
-      year: "1980+",
-      desc: "Баграт Шьынқәба ипоезиатәи ипрозатәи иусумҭақәа зегьы реизга.",
-      badge: "Аизга",
-      highlight: false,
-    },
-    {
-      title: "Чанта кәашама",
-      type: "Асатира / Аповест",
-      year: "1968",
-      desc: "Ажәлар рсатирикатә фольклори ахаҿбзиарақәеи зныԥшуа аусумҭа.",
-      badge: "Апроза",
-      highlight: false,
-    },
-    {
-      title: "Ҳашьцәа адыгьаа",
-      type: "Апублицистика",
-      year: "1975+",
-      desc: "Аԥсуа-адыга жәларқәа рыбжьара иҟоу аишьаратә еимадарақәа рҭоурых.",
-      badge: "Аҭоурых",
-      highlight: false,
-    },
-  ];
+  const books = content.works.books.map((b, i) => ({
+    ...b,
+    highlight: i === 0, // as originally logic, the first one is highlighted
+  }));
 
   return (
     <section id="works" className="py-24 relative bg-[#0B1528]/40 border-y border-slate-800">
@@ -63,13 +18,13 @@ export const WorksSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#00E5C0]/30 text-xs font-semibold text-[#00E5C0] mb-4">
             <Feather className="w-3.5 h-3.5" />
-            <span>Алитературатә шедеврқәа</span>
+            <span>{content.works.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Алитературатә ҭынха
+            {content.works.title}
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Баграт Шьынқәба ироманқәа, ипоемақәа, ипоезиатә усумҭақәа: аԥсуа литература ахьтәы фонд.
+            {content.works.desc}
           </p>
         </div>
 
@@ -82,13 +37,13 @@ export const WorksSection: React.FC = () => {
           <div className="relative z-10 max-w-3xl">
             <div className="flex items-center gap-2 text-xs font-bold text-[#00E5C0] uppercase tracking-wider mb-3">
               <Quote className="w-4 h-4" />
-              <span>Баграт Шьынқәба иажәақәа рҟынтә</span>
+              <span>{content.works.quoteBadge}</span>
             </div>
             <blockquote className="text-lg sm:text-2xl font-serif italic text-slate-100 leading-relaxed mb-4">
-              &laquo;Ҳара ҳжәлар рҭоурых, рыбызшәа, рыкультура: уи ҳара ҳнасыпуп, ҳхақәиҭроуп.&raquo;
+              {content.works.quoteText}
             </blockquote>
             <div className="text-xs sm:text-sm font-semibold text-slate-400">
-              Баграт Уасыл-иԥа Шьынқәба: Аԥсны жәлар рпоет
+              {content.works.quoteAuthor}
             </div>
           </div>
         </div>
@@ -133,8 +88,8 @@ export const WorksSection: React.FC = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
-                <span className="text-slate-400">Ашәҟәыҩҩы:</span>
-                <span className="font-semibold text-slate-200">Б. У. Шьынқәба</span>
+                <span className="text-slate-400">{content.works.authorLabel}</span>
+                <span className="font-semibold text-slate-200">{content.works.authorValue}</span>
               </div>
             </div>
           ))}

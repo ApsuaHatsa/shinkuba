@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Landmark, BookOpen, Camera, Award, MapPin, Calendar } from "lucide-react";
+import { content } from "../data/content";
 
 export const Hero: React.FC = () => {
   return (
@@ -25,15 +26,15 @@ export const Hero: React.FC = () => {
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-[#00E5C0]/30 shadow-glow-teal mb-6">
               <Award className="w-3.5 h-3.5 text-[#00E5C0]" />
               <span className="text-xs font-semibold text-slate-200 tracking-wide">
-                Аԥсны жәлар рпоет, ашәҟәыҩҩы, дакадемикуп
+                {content.hero.badge}
               </span>
             </div>
 
             {/* Main Title */}
             <h1 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-white leading-[1.15] mb-6">
-              Баграт Уасыл-иԥа <br />
+              {content.hero.titlePart1} <br />
               <span className="text-[#00E5C0] drop-shadow-md">
-                Шьынқәба
+                {content.hero.titlePart2}
               </span>
             </h1>
 
@@ -41,10 +42,10 @@ export const Hero: React.FC = () => {
             <div className="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 backdrop-blur-xl mb-6 w-full max-w-2xl">
               <div className="text-lg sm:text-xl font-bold text-slate-100 flex items-center gap-2 mb-1.5">
                 <Landmark className="w-5 h-5 text-[#00E5C0] flex-shrink-0" />
-                <span>Имемориалтә аҩны-музеи</span>
+                <span>{content.hero.museumTitle}</span>
               </div>
               <p className="text-sm text-slate-300 leading-relaxed">
-                Аԥсны акультуреи алитературеи рҭоурых аҿы зынӡа идуу аҭыԥ збо, аклассик, жәлар рпоет Баграт Шьынқәба ихьӡ зху амемориалтә музей Ҷлоу ақыҭа.
+                {content.hero.museumDesc}
               </p>
             </div>
 
@@ -52,11 +53,11 @@ export const Hero: React.FC = () => {
             <div className="flex flex-wrap gap-3 mb-8 text-xs sm:text-sm text-slate-300 font-medium">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/60 border border-slate-700/50">
                 <Calendar className="w-4 h-4 text-[#00E5C0]" />
-                <span>1916 - 2004</span>
+                <span>{content.hero.years}</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-800/60 border border-slate-700/50">
                 <MapPin className="w-4 h-4 text-[#F59E0B]" />
-                <span>Ҷлоу ақыҭа (Лаганиахәы аҳабла)</span>
+                <span>{content.hero.location}</span>
               </div>
             </div>
 
@@ -67,7 +68,7 @@ export const Hero: React.FC = () => {
                 className="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-bold bg-[#00E5C0] hover:bg-[#5EEAD4] text-[#060D1A] transition-all duration-200 shadow-glow-teal hover:scale-105"
               >
                 <BookOpen className="w-4 h-4" />
-                <span>Абиографиа аԥхьара</span>
+                <span>{content.hero.btnBio}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
@@ -76,7 +77,7 @@ export const Hero: React.FC = () => {
                 className="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold bg-slate-800/80 hover:bg-slate-700/90 text-slate-200 hover:text-white border border-slate-700/60 transition-all hover:scale-105"
               >
                 <Camera className="w-4 h-4 text-[#00E5C0]" />
-                <span>Агалереиа (24 фото)</span>
+                <span>{content.hero.btnGallery}</span>
               </Link>
 
               <Link
@@ -84,7 +85,7 @@ export const Hero: React.FC = () => {
                 className="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold bg-slate-900/60 hover:bg-slate-800/80 text-slate-300 hover:text-white border border-slate-800 transition-all"
               >
                 <Landmark className="w-4 h-4 text-[#6366F1]" />
-                <span>Амузеи аҭаара</span>
+                <span>{content.hero.btnMuseum}</span>
               </Link>
             </div>
 
@@ -113,9 +114,9 @@ export const Hero: React.FC = () => {
                   
                   {/* Floating badge inside image */}
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10">
-                    <span className="text-xs font-semibold text-white">Баграт Шьынқәба</span>
+                    <span className="text-xs font-semibold text-white">{content.hero.cardName}</span>
                     <span className="text-[11px] font-medium px-2 py-0.5 rounded-md bg-[#00E5C0]/20 text-[#00E5C0] border border-[#00E5C0]/30">
-                      1916 - 2004
+                      {content.hero.years}
                     </span>
                   </div>
                 </div>
@@ -123,16 +124,16 @@ export const Hero: React.FC = () => {
                 {/* Stat Grid below image */}
                 <div className="grid grid-cols-3 gap-2 mt-3 pt-3 border-t border-slate-800">
                   <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-center">
-                    <div className="text-lg font-bold text-[#00E5C0]">1916</div>
-                    <div className="text-[11px] text-slate-400">Диит Ҷлоу</div>
+                    <div className="text-lg font-bold text-[#00E5C0]">{content.hero.stat1Year}</div>
+                    <div className="text-[11px] text-slate-400">{content.hero.stat1Label}</div>
                   </div>
                   <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-center">
-                    <div className="text-lg font-bold text-[#6366F1]">1967</div>
-                    <div className="text-[11px] text-slate-400">Жәлар рпоет</div>
+                    <div className="text-lg font-bold text-[#6366F1]">{content.hero.stat2Year}</div>
+                    <div className="text-[11px] text-slate-400">{content.hero.stat2Label}</div>
                   </div>
                   <div className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-center">
-                    <div className="text-lg font-bold text-[#F59E0B]">24</div>
-                    <div className="text-[11px] text-slate-400">Афотоқәа</div>
+                    <div className="text-lg font-bold text-[#F59E0B]">{content.hero.stat3Year}</div>
+                    <div className="text-[11px] text-slate-400">{content.hero.stat3Label}</div>
                   </div>
                 </div>
 

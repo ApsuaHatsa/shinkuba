@@ -1,38 +1,11 @@
 "use client";
 
 import React from "react";
-import { Newspaper, Calendar, ArrowUpRight, MapPin } from "lucide-react";
+import { Newspaper, ArrowRight, ExternalLink, CalendarDays, MapPin } from "lucide-react";
+import { content } from "../data/content";
 
 export const NewsSection: React.FC = () => {
-  const newsItems = [
-    {
-      id: 1,
-      date: "12 Лаҵара",
-      year: "Есышықәса",
-      title: "Баграт Шьынқәба диит: Агәалашәара амш Ҷлоу",
-      desc: "Есышықәса 12 лаҵара рзы Ҷлоу ақыҭа аҿы имҩаԥысуеит Аԥсны жәлар рпоет Баграт Шьынқәба иира амш иазкыу акультуратә еизарақәеи аԥхьарақәеи.",
-      category: "Ахҭыс хада",
-      location: "Ҷлоу ақыҭа",
-    },
-    {
-      id: 2,
-      date: "Ашықәсзегьтә",
-      year: "2026",
-      title: "Алитературатә еизарақәеи аҭҵаарадыррақәеи",
-      desc: "Баграт Шьынқәба иԥсҭазаареи иусумҭақәеи ирызку аҭҵаарадырратә еизарақәеи, арукописқәа реиқәырхареи.",
-      category: "Аҭҵаарадырра",
-      location: "Аҩны-музеи",
-    },
-    {
-      id: 3,
-      date: "Ашықәсзегьтә",
-      year: "2026",
-      title: "Алитературатә аԥхьарақәеи апоезиа амшынқәеи",
-      desc: "Баграт Шьынқәба ипоемқәеи иажәеинраалақәеи рзы аконкурсқәеи алитературатә аԥхьарақәеи рхылаԥшра.",
-      category: "Алитература",
-      location: "Ҷлоутәи амузей",
-    },
-  ];
+  const newsItems = content.news.items;
 
   return (
     <section id="news" className="py-24 relative bg-[#060D1A]">
@@ -42,13 +15,13 @@ export const NewsSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#00E5C0]/30 text-xs font-semibold text-[#00E5C0] mb-4">
             <Newspaper className="w-3.5 h-3.5" />
-            <span>Амузеитә ԥсҭазаара</span>
+            <span>{content.news.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Ажәабжьқәа
+            {content.news.title}
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Амемориалтә аҩны-музеи аҿы имҩаԥысуа ахҭысқәеи, акультуратә еизарақәеи, агәалашәаратә мшқәеи.
+            {content.news.desc}
           </p>
         </div>
 
@@ -63,30 +36,30 @@ export const NewsSection: React.FC = () => {
                 {/* Date & Category */}
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2 text-xs font-semibold text-[#00E5C0]">
-                    <Calendar className="w-4 h-4" />
+                    <CalendarDays className="w-4 h-4" />
                     <span>{news.date} ({news.year})</span>
                   </div>
-                  <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#00E5C0]/10 text-[#00E5C0] border border-[#00E5C0]/20">
+                  <span className="text-xs font-bold text-[#00E5C0] tracking-wider uppercase">
                     {news.category}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white group-hover:text-[#00E5C0] transition-colors mb-3 leading-snug">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-[#00E5C0] transition-colors line-clamp-2">
                   {news.title}
                 </h3>
-
-                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <p className="text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
                   {news.desc}
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-                <div className="flex items-center gap-1.5">
+              <div className="mt-auto flex items-center justify-between pt-4 border-t border-slate-800">
+                <div className="flex items-center gap-1.5 text-xs text-slate-400">
                   <MapPin className="w-3.5 h-3.5 text-[#F59E0B]" />
                   <span>{news.location}</span>
                 </div>
-                <div className="w-7 h-7 rounded-full bg-slate-800 group-hover:bg-[#00E5C0] text-slate-300 group-hover:text-[#060D1A] flex items-center justify-center transition-colors">
-                  <ArrowUpRight className="w-4 h-4" />
+                <div className="flex items-center gap-1 text-[#00E5C0] text-xs font-semibold group/btn">
+                  <span>{content.news.readMoreBtn}</span>
+                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </div>
               </div>
             </div>
