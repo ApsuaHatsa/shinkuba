@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
+import { content } from "../data/content";
 
 export const ContactSection: React.FC = () => {
   return (
@@ -12,13 +13,13 @@ export const ContactSection: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-[#00E5C0]/30 text-xs font-semibold text-[#00E5C0] mb-4">
             <Mail className="w-3.5 h-3.5" />
-            <span>Аимадара</span>
+            <span>{content.contact.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-            Аконтактқәа
+            {content.contact.title}
           </h2>
           <p className="text-slate-400 text-base sm:text-lg">
-            Баграт Шьынқәба имемориалтә аҩны-музеи аимадареи аҳаҭырқәҵареи рзы ҳара сынтә хабар ҳаҳәа.
+            {content.contact.desc}
           </p>
         </div>
 
@@ -32,16 +33,16 @@ export const ContactSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-                Ателефон
+                {content.contact.phoneLabel}
               </div>
               <a
-                href="tel:+79409924744"
+                href={`tel:${content.contact.phoneValue.replace(/ /g, '')}`}
                 className="text-xl sm:text-2xl font-bold text-white hover:text-[#00E5C0] transition-colors block mb-1"
               >
-                +7 940 992-47-44
+                {content.contact.phoneValue}
               </a>
               <p className="text-xs text-slate-400">
-                Аофициалтә аимадаразы
+                {content.contact.phoneDesc}
               </p>
             </div>
           </div>
@@ -53,16 +54,16 @@ export const ContactSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-                Аелектронтә почта
+                {content.contact.emailLabel}
               </div>
               <a
-                href="mailto:bshinkuba@yandex.ru"
+                href={`mailto:${content.contact.emailValue}`}
                 className="text-lg sm:text-xl font-bold text-white hover:text-[#00E5C0] transition-colors block mb-1"
               >
-                bshinkuba@yandex.ru
+                {content.contact.emailValue}
               </a>
               <p className="text-xs text-slate-400">
-                Аофициалтә шәҟәыҩра
+                {content.contact.emailDesc}
               </p>
             </div>
           </div>
@@ -74,13 +75,13 @@ export const ContactSection: React.FC = () => {
             </div>
             <div className="flex-1">
               <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1">
-                Аҭыӡҭыԥ
+                {content.contact.addressLabel}
               </div>
               <div className="text-base sm:text-lg font-bold text-white mb-1">
-                Ҷлоу ақыҭа (Лаганиахәы аҳабла)
+                {content.contact.addressValue}
               </div>
               <p className="text-xs text-slate-400">
-                Очамчыра араион, Аԥсны Аҳәынҭқарра
+                {content.contact.addressDesc}
               </p>
             </div>
           </div>
